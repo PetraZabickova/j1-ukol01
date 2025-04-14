@@ -52,7 +52,7 @@ public void nakresliSlunicka()  {
     zofka.turnLeft(90);
     zofka.penDown();
 
-    nakresliSlunicko(8,30,20);
+    nakresliSlunicko(16,30,30);
 }
 
 
@@ -108,11 +108,13 @@ public void nakresliSlunicka()  {
         for (int i = 0; i < pocetStran; i++) {
 
             // Krátká strana sluníčka (hrana mnohoúhelníku)
-            zofka.move(delkaStrany);
-            zofka.turnRight(90);
+            zofka.move(delkaStrany/2);
+            zofka.turnLeft(90);
             zofka.move(delkaPaprsku);
             zofka.turnRight(180);
             zofka.move(delkaPaprsku);
+            zofka.turnLeft(90);
+            zofka.move(delkaStrany/2);
             zofka.turnRight(uhel);
         }
     }
