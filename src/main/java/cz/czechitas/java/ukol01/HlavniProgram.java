@@ -17,7 +17,8 @@ public class HlavniProgram {
         zofka.turnRight(90);
         zofka.move(300);
         zofka.penDown();
-        nakresliSlunicko(12,20,25);
+
+        nakresliSlunicko(12, 20, 25);
 
         zofka.turnLeft(180);
         zofka.penUp();
@@ -51,9 +52,17 @@ public class HlavniProgram {
         zofka.turnLeft(90);
         zofka.penDown();
         nakresliDomecek();
+
+        zofka.penUp();
+        zofka.move(200);
+        zofka.turnRight(90);
+        zofka.move(900);
+        zofka.turnRight(90);
+
+        nakresliJmenoPetra();
     }
 
-        //
+    //
 //
 //        zofka.penUp();
 //        zofka.turnLeft(90);
@@ -73,6 +82,15 @@ public class HlavniProgram {
 //        nakresliSlunicka();
 //    }
 
+    public void nakresliJmenoPetra() {
+
+        nakresliP();
+        nakresliE();
+        nakresliT();
+        nakresliR();
+        nakresliA();
+    }
+
     public void nakresliPrasatko() {
         nakresliCtverec();
 
@@ -80,7 +98,8 @@ public class HlavniProgram {
 
         nakresliNozicky();
     }
-    public void nakresliDomecek(){
+
+    public void nakresliDomecek() {
         nakresliCtverec();
         zofka.move(100);
         zofka.turnRight(90);
@@ -169,4 +188,110 @@ public class HlavniProgram {
         }
     }
 
+    public void nakresliP() {
+        zofka.penDown();
+        zofka.move(100); // nožička P
+        zofka.turnRight(90);
+        zofka.move(50); // vršek
+        zofka.turnRight(90);
+        zofka.move(50); // dolů k obloučku
+        zofka.turnRight(90);
+        zofka.move(50); // zpět k nožičce
+        zofka.penUp();
+
+
+        // Vrátíme se dolů a natočíme želvu zpět nahoru
+        zofka.turnLeft(90);
+        zofka.move(50);
+        zofka.turnLeft(90);
+        zofka.move(100);
+        zofka.turnLeft(90);
+
+    }
+
+
+    public void nakresliE() {
+        zofka.penDown();
+        zofka.move(100); // svislá čára
+        zofka.turnRight(90);
+        zofka.move(50);  // horní vodorovná
+        zofka.turnLeft(180);
+        zofka.move(50); // do středu
+        zofka.turnLeft(90);
+        zofka.move(50); // prostřední
+        zofka.turnLeft(90);
+        zofka.move(30);
+        zofka.turnRight(180);
+        zofka.move(30); // dolů
+        zofka.turnLeft(90);
+        zofka.move(50); // dolní
+        zofka.turnLeft(90);
+        zofka.move(50);
+
+    }
+
+
+    public void nakresliT() {
+        zofka.penUp();
+        zofka.move(100);
+        zofka.turnLeft(90);
+        zofka.penDown();
+        zofka.move(100);
+        zofka.turnLeft(90);
+        zofka.move(50);
+        zofka.turnLeft(180);
+        zofka.move(100);
+        zofka.turnRight(180);
+        zofka.move(50);
+        zofka.turnLeft(90);
+        zofka.move(100);
+        zofka.turnLeft(90);
+        zofka.penUp();
+        zofka.move(100);
+    }
+
+
+    public void nakresliR() {
+        zofka.turnLeft(90);
+        zofka.penDown();
+        zofka.move(100);      // svislá noha
+        zofka.turnRight(90);
+        zofka.move(50);       // horní vodorovná
+        zofka.turnRight(90);
+        zofka.move(50);       // dolů
+        zofka.turnRight(90);
+        zofka.move(50);       // zpět k noze
+        zofka.turnLeft(135);  // příprava na diagonálu
+        zofka.move(70);       // diagonální noha R
+        zofka.penUp();
+
+
+        // návrat nahoru
+        zofka.turnLeft(45);
+        zofka.move(50);
+        zofka.turnLeft(90);
+    }
+
+
+    public void nakresliA() {
+        zofka.penDown();
+        zofka.turnRight(20);   // naklonění levé nohy A
+        zofka.move(106);       // přibližně délka šikmé nohy (100 / cos(20°))
+        zofka.turnRight(140);  // natočit doprava na druhou nohu
+        zofka.move(106);
+        zofka.penUp();
+        zofka.turnRight(180);    // otočit se o 180° (dáme si pomocnou metodu níž)
+        zofka.move(53);        // na střed "příčky"
+        zofka.turnLeft(70);    // natočit na příčku
+        zofka.penDown();
+        zofka.move(40);        // příčka A
+        zofka.penUp();
+
+
+        // návrat nahoru a do výchozí pozice
+        zofka.turnLeft(110);   // natočíme se zpět nahoru
+        zofka.move(53);
+
+
+    }
 }
