@@ -5,11 +5,43 @@ import cz.czechitas.java.ukol01.engine.Turtle;
 public class HlavniProgram {
     private Turtle zofka;
 
+
     public static void main(String[] args) {
         new HlavniProgram().start();
     }
 
+
     public void start() {
+//      zofka = new Turtle();
+//      zofka.penUp();
+//      zofka.turnLeft(90);
+//      zofka.move(100);
+//      zofka.penDown();
+//      zofka.turnRight(90);
+//
+//      nakresliPrasatko();
+//      zofka.penUp();
+//      zofka.move(50.0);
+//      zofka.turnRight(90.0);
+//      zofka.move(50.0);
+//      zofka.turnLeft(90.0);
+//      zofka.move(50.0);
+//      zofka.penDown();
+//
+//      nakresliOsmiuhelnik();
+//      zofka.penUp();
+//      zofka.turnLeft(180);
+//      zofka.move(300.0);
+//      zofka.penDown();
+//
+//      nakresliKruh();
+//      zofka.penUp();
+//      zofka.turnRight(180.0);
+//      zofka.move(200.0);
+//      zofka.penDown();
+//
+//      nakresliSlunicko(16,30,30);
+
         zofka = new Turtle();
         zofka.penUp();
         zofka.turnLeft(90);
@@ -62,26 +94,6 @@ public class HlavniProgram {
         nakresliJmenoPetra();
     }
 
-    //
-//
-//        zofka.penUp();
-//        zofka.turnLeft(90);
-//        zofka.move(300);
-//        zofka.penDown();
-//        zofka.turnRight(90);
-//
-//        nakresliPrasatko();
-//
-//        zofka.penUp();
-//        zofka.move(100.0);
-//        zofka.turnRight(90.0);
-//        zofka.move(100.0);
-//        zofka.turnLeft(90.0);
-//        zofka.penDown();
-//
-//        nakresliSlunicka();
-//    }
-
     public void nakresliJmenoPetra() {
 
         nakresliP();
@@ -108,24 +120,22 @@ public class HlavniProgram {
         zofka.move(100);
     }
 
-    public void nakresliSlunicka() {
+    public void nakresliOsmiuhelnik() {
         nakresliMnohouhelnik(8, 50);
 
         zofka.penUp();
         zofka.move(100.0);
         zofka.turnRight(90);
         zofka.penDown();
-
-        nakresliMnohouhelnik(12, 20);
-
-        zofka.penUp();
-        zofka.move(200.0);
-        zofka.turnLeft(90);
-        zofka.penDown();
-
-        nakresliSlunicko(16, 30, 30);
     }
 
+    public void nakresliKruh() {
+        nakresliMnohouhelnik(16, 20);
+        zofka.penUp();
+        zofka.move(100.0);
+        zofka.turnRight(90);
+        zofka.penDown();
+    }
 
     public void nakresliCtverec() {
         for (int i = 0; i < 4; i++) {
