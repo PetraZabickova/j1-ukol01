@@ -177,13 +177,13 @@ public class HlavniProgram {
         for (int i = 0; i < pocetStran; i++) {
 
             // Krátká strana sluníčka (hrana mnohoúhelníku)
-            zofka.move(delkaStrany / 2);
+            zofka.move(delkaStrany / 2.0);
             zofka.turnLeft(90);
             zofka.move(delkaPaprsku);
             zofka.turnRight(180);
             zofka.move(delkaPaprsku);
             zofka.turnLeft(90);
-            zofka.move(delkaStrany / 2);
+            zofka.move(delkaStrany / 2.0);
             zofka.turnRight(uhel);
         }
     }
